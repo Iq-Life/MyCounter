@@ -1,0 +1,26 @@
+.buttons {
+    border: solid 1px #61dafb;
+    border-radius: 10px;
+    margin-top: 7px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.buttonsInc{
+    font-size: 25px;
+    border-radius: 25px;
+    background-color: #61dafb;
+}
+.buttonsReset{
+    font-size: 25px;
+    margin-left: 10px;
+    background-color: #61dafb;
+    border-radius: 5px;
+}
+.buttonsSet{
+    font-size: 25px;
+    margin-left: 10px;
+    background-color: #61dafb;
+}

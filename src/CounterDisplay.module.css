@@ -1,0 +1,21 @@
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #61dafb;
+    border: solid 1px #61dafb;
+    border-radius: 10px;
+    height: 200px;
+    width: 300px;
+}
+.errorMessage {
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #61dafb;
+    border: solid 1px #61dafb;
+    border-radius: 10px;
+    height: 100px;
+    width: 200px;
+}
