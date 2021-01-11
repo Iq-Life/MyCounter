@@ -1,5 +1,16 @@
-.Counter {
-    border: solid 1px #61dafb;
+.Set {
+border: #61dafb 1px solid;
     border-radius: 10px;
     padding: 10px;
+    height: 280px;
+    width: 200px;
+    margin: 1px;
+    font-size: small;
+    position:relative;
+    color: #61dafb;
+}
+.button{
+    position: absolute;
+    bottom: 0;
+    left: 40%;
 }
