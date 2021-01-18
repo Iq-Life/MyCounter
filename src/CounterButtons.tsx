@@ -7,6 +7,7 @@ type CounterButtonType = {
     reset: () => void
     collapsed: boolean
     onClick:(unCollapsed:boolean) => void
+    maxNumb:number
 }
 
 function CounterButtons(props: CounterButtonType) {
@@ -19,11 +20,11 @@ function CounterButtons(props: CounterButtonType) {
         <div className={s.buttons}>
             <span><button className={s.buttonsInc}
                           onClick={addInc}
-                          disabled={props.count === 5}
+                          disabled={props.count === props.maxNumb}
             >Inc</button></span>
             <span><button className={s.buttonsReset}
                           onClick={reset}
-                          disabled={props.count < 5}
+                          disabled={props.count < props.maxNumb}
             >Reset</button></span>
             <span><button className={s.buttonsSet}
                 onClick={set}

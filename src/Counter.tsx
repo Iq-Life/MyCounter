@@ -6,27 +6,36 @@ import CounterDisplay from "./CounterDisplay";
 type CounterType ={
     collapsed: boolean
     onClick:(unCollapsed:boolean) => void
+    maxNumb:number
+    count: number
+    setCount:(setCount:number)=> void
 }
 
 function Counter(props:CounterType) {
 
-    const [count, setCount] = useState(0)
+
+
     const [error, setError] = useState<boolean>(false)
 
-    function addInc () { count < 5 ? setCount(count + 1) :  setError(true)}
+
+
+
+    function addInc () { props.count < props.maxNumb ? props.setCount(props.count + 1) :  setError(true)}
 
     function reset () {
-        setCount(0)
+        props.setCount(props.count)
         setError(false)
     }
 
     return <div className="Counter">
-        <CounterDisplay count={count} status={error}/>
+        <CounterDisplay count={props.count} status={error}/>
         <CounterButtons addInc={addInc}
-                        count={count}
+                        count={props.count}
                         reset={reset}
                         collapsed={props.collapsed}
-                        onClick={props.onClick}/>
+                        onClick={props.onClick}
+                        maxNumb={props.maxNumb}
+        />
     </div>
 }
 

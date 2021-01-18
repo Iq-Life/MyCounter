@@ -7,9 +7,9 @@ type CounterDisplayType = {
 }
 
 function CounterDisplay(props:CounterDisplayType) {
-
+ let classForDisplay = props.status ?  s.errorMessage : s.display
     return <div>
-        <div className={ props.status ?  s.errorMessage : s.display }>{props.count}</div>
+        <div className={classForDisplay}>{props.count}</div>
     </div>
 }
 

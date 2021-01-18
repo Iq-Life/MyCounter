@@ -13,4 +13,8 @@ border: #61dafb 1px solid;
     position: absolute;
     bottom: 0;
     left: 40%;
+    margin: 0 0 10px 0;
+}
+.input {
+    margin: 5px;
 }
