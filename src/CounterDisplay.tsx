@@ -3,11 +3,11 @@ import s from './CounterDisplay.module.css';
 
 type CounterDisplayType = {
     count: number
-    status: boolean
+    maxNumb:number
 }
 
 function CounterDisplay(props:CounterDisplayType) {
- let classForDisplay = props.status ?  s.errorMessage : s.display
+ let classForDisplay = props.count === props.maxNumb ?  s.errorMessage : s.display
     return <div>
         <div className={classForDisplay}>{props.count}</div>
     </div>

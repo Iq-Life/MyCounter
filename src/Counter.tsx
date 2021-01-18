@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Counter.css';
 import CounterButtons from "./CounterButtons";
 import CounterDisplay from "./CounterDisplay";
@@ -9,26 +9,17 @@ type CounterType ={
     maxNumb:number
     count: number
     setCount:(setCount:number)=> void
+    startCount:number
 }
 
 function Counter(props:CounterType) {
 
+    function addInc () {props.setCount(props.count + 1)}
 
-
-    const [error, setError] = useState<boolean>(false)
-
-
-
-
-    function addInc () { props.count < props.maxNumb ? props.setCount(props.count + 1) :  setError(true)}
-
-    function reset () {
-        props.setCount(props.count)
-        setError(false)
-    }
+    function reset () {props.setCount(props.startCount)}
 
     return <div className="Counter">
-        <CounterDisplay count={props.count} status={error}/>
+        <CounterDisplay count={props.count} maxNumb={props.maxNumb}/>
         <CounterButtons addInc={addInc}
                         count={props.count}
                         reset={reset}

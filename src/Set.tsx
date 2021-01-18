@@ -5,12 +5,12 @@ type SetType = {
     maxNumb: number
     setMaxNumb: (setMaxNumb: number) => void
     setCount: (setCount:number) => void
-    inputStartNumb:number
-    setInputStartNumb:(setInputStartNumb:number) => void
+    startCount:number
 }
 
 function Set(props: SetType) {
     const [inputMaxNumb, setInputMaxNumb] = useState<number>(0)
+    const [inputStartNumb, setInputStartNumb] = useState<number>(0)
 
     let onChangeMaxValue = (e: any) => {
         let maxValue = e.currentTarget.value
@@ -18,15 +18,11 @@ function Set(props: SetType) {
     }
     let onChangeStartValue = (e: any) => {
         let startValue = e.currentTarget.value
-        props.setInputStartNumb(startValue)
+        setInputStartNumb(startValue)
     }
     let saveClick = () => {
-        if (inputMaxNumb > props.maxNumb) {
             props.setMaxNumb(inputMaxNumb)
-        }
-        if ( props.inputStartNumb > inputMaxNumb){
-            props.setCount(props.inputStartNumb)
-        }
+            props.startCount=inputStartNumb
     }
     return (
         <div className={s.Set}>

@@ -4,10 +4,12 @@ import Counter from "./Counter";
 import Set from "./Set";
 
 function App() {
-    const [collapsed, unCollapsed] = useState<boolean>(false)
-    const [count, setCount] = useState(0)
+    let startCount = 0
+
+    const [count, setCount] = useState(startCount)
     const [maxNumb, setMaxNumb] = useState<number>(5)
-    const [inputStartNumb, setInputStartNumb] = useState<number>(0)
+    const [collapsed, unCollapsed] = useState<boolean>(false)
+
     return (
         <div className="App">
             <header className="App-header">
@@ -16,12 +18,13 @@ function App() {
                          maxNumb={maxNumb}
                          count={count}
                          setCount={setCount}
+                         startCount={startCount}
+
                 />
                 {collapsed && <Set maxNumb={maxNumb}
                                    setMaxNumb={setMaxNumb}
                                    setCount={setCount}
-                                   inputStartNumb={inputStartNumb}
-                                   setInputStartNumb={setInputStartNumb}
+                                   startCount={startCount}
                 />}
             </header>
         </div>
