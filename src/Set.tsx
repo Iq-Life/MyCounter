@@ -4,8 +4,9 @@ import s from './Set.module.css';
 type SetType = {
     maxNumb: number
     setMaxNumb: (setMaxNumb: number) => void
-    setCount: (setCount:number) => void
-    startCount:number
+    setCount: (setCount: number) => void
+    startNumb: number
+    setStartNumb: (setStartNumb: number) => void
 }
 
 function Set(props: SetType) {
@@ -21,8 +22,12 @@ function Set(props: SetType) {
         setInputStartNumb(startValue)
     }
     let saveClick = () => {
+        if (inputMaxNumb > inputStartNumb) {
             props.setMaxNumb(inputMaxNumb)
-            props.startCount=inputStartNumb
+        }
+        if (inputStartNumb < inputMaxNumb) {
+            props.setCount(inputStartNumb)
+        }
     }
     return (
         <div className={s.Set}>

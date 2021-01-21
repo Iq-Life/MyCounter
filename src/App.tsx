@@ -4,10 +4,10 @@ import Counter from "./Counter";
 import Set from "./Set";
 
 function App() {
-    let startCount = 0
 
-    const [count, setCount] = useState(startCount)
+    const [startNumb, setStartNumb] = useState(0)
     const [maxNumb, setMaxNumb] = useState<number>(5)
+    const [count, setCount] = useState(startNumb)
     const [collapsed, unCollapsed] = useState<boolean>(false)
 
     return (
@@ -18,13 +18,14 @@ function App() {
                          maxNumb={maxNumb}
                          count={count}
                          setCount={setCount}
-                         startCount={startCount}
+                         startNumb={startNumb}
 
                 />
                 {collapsed && <Set maxNumb={maxNumb}
                                    setMaxNumb={setMaxNumb}
                                    setCount={setCount}
-                                   startCount={startCount}
+                                   startNumb={startNumb}
+                                   setStartNumb={setStartNumb}
                 />}
             </header>
         </div>

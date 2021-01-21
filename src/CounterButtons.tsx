@@ -20,7 +20,7 @@ function CounterButtons(props: CounterButtonType) {
         <div className={s.buttons}>
             <span><button className={s.buttonsInc}
                           onClick={addInc}
-                          disabled={props.count === props.maxNumb}
+                          disabled={props.count >= props.maxNumb}
             >Inc</button></span>
             <span><button className={s.buttonsReset}
                           onClick={reset}

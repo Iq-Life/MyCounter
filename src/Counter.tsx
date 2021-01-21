@@ -9,14 +9,14 @@ type CounterType ={
     maxNumb:number
     count: number
     setCount:(setCount:number)=> void
-    startCount:number
+    startNumb:number
 }
 
 function Counter(props:CounterType) {
 
-    function addInc () {props.setCount(props.count + 1)}
+    function addInc () {props.setCount(props.count+1)}
 
-    function reset () {props.setCount(props.startCount)}
+    function reset () {props.setCount(props.startNumb)}
 
     return <div className="Counter">
         <CounterDisplay count={props.count} maxNumb={props.maxNumb}/>
