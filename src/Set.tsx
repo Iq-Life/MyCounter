@@ -13,6 +13,9 @@ function Set(props: SetType) {
     const [inputMaxNumb, setInputMaxNumb] = useState<number>(0)
     const [inputStartNumb, setInputStartNumb] = useState<number>(0)
 
+    const classForInputMax = inputMaxNumb >= inputStartNumb ? s.input : s.error
+    const classForInputStart = inputStartNumb <= inputMaxNumb ? s.input : s.error
+
     let onChangeMaxValue = (e: any) => {
         let maxValue = e.currentTarget.value
         setInputMaxNumb(maxValue)
@@ -32,7 +35,7 @@ function Set(props: SetType) {
     return (
         <div className={s.Set}>
             <div>Max value</div>
-            <input className={s.input}
+            <input className={classForInputMax}
                    placeholder={"Max value"}
                    type='number'
                    max={999}
@@ -40,7 +43,7 @@ function Set(props: SetType) {
                    onChange={onChangeMaxValue}
             />
             <div>Start value</div>
-            <input className={s.input}
+            <input className={classForInputStart}
                    type='number'
                    max={999}
                    min={-999}

@@ -18,3 +18,7 @@ border: #61dafb 1px solid;
 .input {
     margin: 5px;
 }
+.error {
+    border: 1px dashed red;
+    margin: 5px;
+}
