@@ -8,6 +8,7 @@ type CounterDisplayType = {
 
 function CounterDisplay(props:CounterDisplayType) {
  let classForDisplay = props.count >= props.maxNumb ?  s.errorMessage : s.display
+
     return <div>
         <div className={classForDisplay}>{props.count}</div>
     </div>
