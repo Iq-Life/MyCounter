@@ -1,6 +1,6 @@
 import {combineReducers, createStore} from "redux";
 
-
+export type ActionTypes = Returntype<typeof addCount>
 
 export let reducersBatch = combineReducers ({
 
